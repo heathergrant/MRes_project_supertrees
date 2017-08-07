@@ -1,17 +1,15 @@
-## This script gives the distances from each STM and the "true tree" created at the beginning 
-
-
+## This script gives the distance matrix between supertree method outputs. 
 import p4.scqdist 
 
-#read an alignment for taxNames' sake                                                              
-
-a=func.readAndPop('./results/gene0.phy')                                                                                                        
+#read an alignment for taxNames                                                              
+a=func.readAndPop('./results/gene0.phy')      
+                                                                                                  
 #match master tree and reconstructed tree for calculating their distances                                                                                                                                                                                
 truetree= func.readAndPop('./results/gene.true')                                                  
 truetree.taxNames = a.taxNames                                                                                                                
 
-mrptree = func.readAndPop('mrpStrictConsTree.nex') 
-mrptree.taxNames = a.taxNames                                                                                                                
+mrp = func.readAndPop('mrpStrictConsTree.nex') 
+mrp.taxNames = a.taxNames                                                                                                                
 
 sr2008 = func.readAndPop('SR2008Cons.nex')
 sr2008.taxNames=a.taxNames
@@ -22,44 +20,27 @@ spa.taxNames=a.taxNames
 qpa= func.readAndPop('QPA_cons.nex')
 qpa.taxNames=a.taxNames
 
-mrp_rf = (truetree.topologyDistance(mrptree ,metric='sd'))
-mrp_wrf =(truetree.topologyDistance(mrptree, metric='wrf'))   
-mrp_bld =(truetree.topologyDistance(mrptree, metric='bld'))                                      
-mrp_qd = (truetree.topologyDistance(mrptree, metric='scqdist'))
+var.trees.append(truetree)
+var.trees.append(mrp)
+var.trees.append(sr2008)
+var.trees.append(spa)
+var.trees.append(qpa) 
+mytreelist= [truetree, mrp, sr2008, spa, qpa]
+tt = Trees(mytreelist)
 
-print("RF distance for MRP is %i" %mrp_rf)
-print("WRF distance for MRP is %i" %mrp_wrf)
-print("BLD distance for MRP is %i" %mrp_bld)
-print("QD distance for MRP is %i" % mrp_qd)
+dm = tt.topologyDistanceMatrix('sd')
+dm.writeNexus()
 
-sr2008_rf = (truetree.topologyDistance(sr2008 ,metric='sd'))
-sr2008_wrf =(truetree.topologyDistance(sr2008, metric='wrf'))   
-sr2008_bld =(truetree.topologyDistance(sr2008, metric='bld'))                                      
-sr2008_qd = (truetree.topologyDistance(sr2008, metric='scqdist'))
+rf_dist = (truetree.topologyDistance(mrp, metric='sd'))
+print("RF distance from true tree to mrp is %i" % rf_dist)
 
-print("RF distance for SR2008 is %i" %sr2008_rf)
-print("WRF distance for SR2008 is %i" %sr2008_wrf)
-print("BLD distance for SR2008 is %i" %sr2008_bld)
-print("QD distance for SR2008 is %i" % sr2008_qd)
+rf_dist_2 = (spa.topologyDistance(qpa, metric='sd'))
+print("RF distance spa to qpa is %i" %rf_dist_2)
 
-
-spa_rf = (truetree.topologyDistance(spa ,metric='sd'))
-spa_wrf =(truetree.topologyDistance(spa, metric='wrf'))   
-spa_bld =(truetree.topologyDistance(spa, metric='bld'))                                      
-spa_qd = (truetree.topologyDistance(spa, metric='scqdist'))
-
-print("RF distance for SPA is %i" %spa_rf)
-print("WRF distance for SPA is %i" %spa_wrf)
-print("BLD distance for SPA is %i" %spa_bld)
-print("QD distance for SPA is %i" % spa_qd)
-
-
-qpa_rf = (truetree.topologyDistance(qpa ,metric='sd'))
-qpa_wrf =(truetree.topologyDistance(qpa, metric='wrf'))   
-qpa_bld =(truetree.topologyDistance(qpa, metric='bld'))                                      
-qpa_qd = (truetree.topologyDistance(qpa, metric='scqdist'))
-
-print("RF distance for QPA is %i" %qpa_rf)
-print("WRF distance for QPA is %i" %qpa_wrf)
-print("BLD distance for QPA is %i" %qpa_bld)
-print("QD distance for QPA is %i" % qpa_qd)
+#for mystm in stmlist:
+#
+#	rf_dist = (truetree.topologyDistance(%s, metric='sd' % mystm))
+#	qd_dist = (truetree.topologyDistance(%s, metric='scqdist' % mystm))
+#
+#	print("RF distance for %s is %i" %(mystm, rf_dist))
+#	print("QD distance for %s is %i" % (mystm, qd_dist)
