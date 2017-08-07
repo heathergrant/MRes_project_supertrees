@@ -37,10 +37,3 @@ print("RF distance from true tree to mrp is %i" % rf_dist)
 rf_dist_2 = (spa.topologyDistance(qpa, metric='sd'))
 print("RF distance spa to qpa is %i" %rf_dist_2)
 
-#for mystm in stmlist:
-#
-#	rf_dist = (truetree.topologyDistance(%s, metric='sd' % mystm))
-#	qd_dist = (truetree.topologyDistance(%s, metric='scqdist' % mystm))
-#
-#	print("RF distance for %s is %i" %(mystm, rf_dist))
-#	print("QD distance for %s is %i" % (mystm, qd_dist)
