@@ -1,0 +1,71 @@
+%% This is a tikz file
+
+% This file is set up to use 11pt palatino font.
+\tikzset{node lower left/.style={font=\scriptsize,anchor=north east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+leaf/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.13cm},
+node upper left/.style={font=\scriptsize,anchor=south east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+bracket label/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.2cm},
+node upper right/.style={font=\scriptsize,anchor=south west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+node right/.style={font=\scriptsize,anchor=west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+branch/.style={font=\tiny,text height=0.149cm,text depth=0.059cm,inner sep=0.025cm},
+root/.style={font=\normalsize,anchor=east,text height=0.271cm,text depth=0.109cm},
+node lower right/.style={font=\scriptsize,anchor=north west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm}}
+\begin{tikzpicture}[semithick,inner sep=0.1cm]
+% +-----------------1:total_evidence
+% |
+% |   +-3:MRP_100
+% 0---2
+% |   +-4:MRP_50
+% |
+% |  +-6:SR2008
+% +--5
+%    +---7:SPA
+
+% The scale is 0.083750, and the yScale is 0.700000
+
+%% Coordinates of nodes.
+\coordinate (n0) at (0.000,1.575);
+\coordinate (n1) at (2.345,2.800);
+\coordinate (n1p) at (0.000,2.800);
+\coordinate (n2) at (0.503,1.750);
+\coordinate (n2p) at (0.000,1.750);
+\coordinate (n3) at (0.698,2.100);
+\coordinate (n3p) at (0.503,2.100);
+\coordinate (n4) at (0.726,1.400);
+\coordinate (n4p) at (0.503,1.400);
+\coordinate (n5) at (0.419,0.350);
+\coordinate (n5p) at (0.000,0.350);
+\coordinate (n6) at (0.586,0.700);
+\coordinate (n6p) at (0.419,0.700);
+\coordinate (n7) at (0.838,0.000);
+\coordinate (n7p) at (0.419,0.000);
+
+%% horizontal lines
+\draw (n1p) -- (n1);
+\draw (n2p) -- (n2);
+\draw (n3p) -- (n3);
+\draw (n4p) -- (n4);
+\draw (n5p) -- (n5);
+\draw (n6p) -- (n6);
+\draw (n7p) -- (n7);
+
+%% vertical lines
+\draw [line cap=rect] (n1p) -- (n5p);
+\draw [line cap=rect] (n3p) -- (n4p);
+\draw [line cap=rect] (n6p) -- (n7p);
+
+%% leaf labels
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n1) {total\_evidence};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n3) {MRP\_100};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n4) {MRP\_50};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n6) {SR2008};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n7) {SPA};
+
+%% scale bar
+\coordinate (sb_A) at (3.209,0.000);
+\coordinate (sb_B) at (3.000,0.000);
+\coordinate (sb_C) at (3.419,0.000);
+\draw (sb_B) -- (sb_C);
+\node [font=\small,anchor=south,text height=0.248cm,text depth=0.099cm] at (sb_A) {5.0};
+
+\end{tikzpicture}

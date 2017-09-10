@@ -1,0 +1,12 @@
+begin paup;
+	set notifybeep=no;
+	set warntsave=no;
+	set maxtrees=10000 increase=no;
+	execute mr.nex;
+	[first collect 100 trees, then swap on them]
+	hs addseq=random nreps=100 multrees=no;
+	hs start=current multrees=yes;
+	savetrees file=mrpPaupTrees.nex;
+	contree all / treefile=mrpStrictConsTree.nex replace=yes showtree=no; [do I need to useTreeWts?]
+	quit;
+end;

@@ -1,0 +1,66 @@
+%% This is a tikz file
+
+% This file is set up to use 11pt palatino font.
+\tikzset{tgr internal/.style={font=\scriptsize,fill=White,text height=0.198cm,text depth=0.079cm,inner sep=0.07cm},
+tgr branch/.style={font=\tiny,text height=0.149cm,text depth=0.059cm,inner sep=0.05cm},
+tgr leaf/.style={font=\normalsize,anchor=center,text height=0.271cm,text depth=0.109cm,inner sep=0.0cm},
+tgr root/.style={font=\scriptsize,fill=White,text height=0.198cm,text depth=0.079cm,inner sep=0.07cm}}
+\begin{tikzpicture}[semithick,inner sep=0.1cm]
+% +------------1:MRP_100
+% |
+% |-2:MRP_50
+% 0
+% |        +--5:SR2008
+% |   +----4
+% +---3    +--6:SPA
+%     |
+%     +---------------------------7:QPA
+
+% The scale is 0.055198, and the yScale is 0.055198
+
+%% Coordinates of nodes.
+\coordinate (n0) at (0.000,0.000);
+\coordinate (n1) at (2.015,0.000);
+\coordinate (cL1) at (2.917,0.000);
+\coordinate (n1p) at (0.000,0.000);
+\coordinate (n2) at (0.094,-0.289);
+\coordinate (cL2) at (0.750,-0.540);
+\coordinate (n2p) at (0.000,0.000);
+\coordinate (n3) at (-0.381,0.525);
+\coordinate (n3p) at (0.000,0.000);
+\coordinate (n4) at (-1.223,0.525);
+\coordinate (n4p) at (-0.381,0.525);
+\coordinate (n5) at (-1.506,0.319);
+\coordinate (cL5) at (-2.196,0.192);
+\coordinate (n5p) at (-1.223,0.525);
+\coordinate (n6) at (-1.476,0.709);
+\coordinate (cL6) at (-1.901,0.836);
+\coordinate (n6p) at (-1.223,0.525);
+\coordinate (n7) at (0.979,4.711);
+\coordinate (cL7) at (1.346,4.918);
+\coordinate (n7p) at (-0.381,0.525);
+
+%% branchlines
+\draw [line cap=round] (n1p) -- (n1);
+\draw [line cap=round] (n2p) -- (n2);
+\draw [line cap=round] (n3p) -- (n3);
+\draw [line cap=round] (n4p) -- (n4);
+\draw [line cap=round] (n5p) -- (n5);
+\draw [line cap=round] (n6p) -- (n6);
+\draw [line cap=round] (n7p) -- (n7);
+
+%% leaf labels
+\node [tgr leaf,text height=0.271cm,text depth=0.109cm] at (cL1) {MRP\_100};
+\node [tgr leaf,text height=0.271cm,text depth=0.109cm] at (cL2) {MRP\_50};
+\node [tgr leaf,text height=0.271cm,text depth=0.109cm] at (cL5) {SR2008};
+\node [tgr leaf,text height=0.271cm,text depth=0.109cm] at (cL6) {SPA};
+\node [tgr leaf,text height=0.271cm,text depth=0.109cm] at (cL7) {QPA};
+
+%% scale bar
+\coordinate (sb_A) at (2.552,-1.000);
+\coordinate (sb_B) at (2.000,-1.000);
+\coordinate (sb_C) at (3.104,-1.000);
+\draw (sb_B) -- (sb_C);
+\node [font=\small,anchor=south,text height=0.248cm,text depth=0.099cm] at (sb_A) {20.0};
+
+\end{tikzpicture}

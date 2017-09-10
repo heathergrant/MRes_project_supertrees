@@ -1,0 +1,46 @@
+%% This is a tikz file
+
+% This file is set up to use 11pt palatino font.
+\tikzset{tgr internal/.style={font=\scriptsize,fill=White,text height=0.198cm,text depth=0.079cm,inner sep=0.07cm},
+tgr branch/.style={font=\tiny,text height=0.149cm,text depth=0.059cm,inner sep=0.05cm},
+tgr leaf/.style={font=\normalsize,anchor=center,text height=0.271cm,text depth=0.109cm,inner sep=0.0cm},
+tgr root/.style={font=\scriptsize,fill=White,text height=0.198cm,text depth=0.079cm,inner sep=0.07cm}}
+\begin{tikzpicture}[semithick,inner sep=0.1cm]
+% 1:MRP
+% |
+% 0-------2:QPA
+% |
+% +-3:SPA
+
+% The scale is 0.481125, and the yScale is 0.481125
+
+%% Coordinates of nodes.
+\coordinate (n0) at (0.000,0.000);
+\coordinate (n1) at (0.000,0.000);
+\coordinate (cL1) at (0.544,0.000);
+\coordinate (n1p) at (0.000,0.000);
+\coordinate (n2) at (-2.406,-4.167);
+\coordinate (cL2) at (-2.814,-4.399);
+\coordinate (n2p) at (0.000,0.000);
+\coordinate (n3) at (-0.481,0.833);
+\coordinate (cL3) at (-0.840,1.021);
+\coordinate (n3p) at (0.000,0.000);
+
+%% branchlines
+\draw [line cap=round] (n1p) -- (n1);
+\draw [line cap=round] (n2p) -- (n2);
+\draw [line cap=round] (n3p) -- (n3);
+
+%% leaf labels
+\node [tgr leaf,text height=0.271cm,text depth=0.109cm] at (cL1) {MRP};
+\node [tgr leaf,text height=0.271cm,text depth=0.109cm] at (cL2) {QPA};
+\node [tgr leaf,text height=0.271cm,text depth=0.109cm] at (cL3) {SPA};
+
+%% scale bar
+\coordinate (sb_A) at (0.481,-3.000);
+\coordinate (sb_B) at (0.000,-3.000);
+\coordinate (sb_C) at (0.962,-3.000);
+\draw (sb_B) -- (sb_C);
+\node [font=\small,anchor=south,text height=0.248cm,text depth=0.099cm] at (sb_A) {2.0};
+
+\end{tikzpicture}

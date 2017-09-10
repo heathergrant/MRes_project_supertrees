@@ -1,0 +1,112 @@
+%% This is a tikz file
+
+% This file is set up to use 11pt palatino font.
+\tikzset{node lower left/.style={font=\scriptsize,anchor=north east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+leaf/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.13cm},
+node upper left/.style={font=\scriptsize,anchor=south east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+bracket label/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.2cm},
+node upper right/.style={font=\scriptsize,anchor=south west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+node right/.style={font=\scriptsize,anchor=west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+branch/.style={font=\tiny,text height=0.149cm,text depth=0.059cm,inner sep=0.025cm},
+root/.style={font=\normalsize,anchor=east,text height=0.271cm,text depth=0.109cm},
+node lower right/.style={font=\scriptsize,anchor=north west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm}}
+\begin{tikzpicture}[semithick,inner sep=0.1cm]
+%                         +---------6:lebanonensis
+%                         |
+%               +---------5:21      +---------8:melanogaster
+%               |         +---------7:55
+%               |                   |         +---------10:sechellia
+%               |                   +---------9:48
+% out:12--------4                             +---------11:simulans
+%               |
+%               |                   +---------14:yakuba
+%               |         +---------13:23
+%               |         |         +---------15:erecta
+%               +---------3:35
+%                         |         +---------1:hydei
+%                         +---------0:43
+%                                   +---------2:virilis
+
+% The scale is 8.442000, and the yScale is 0.700000
+
+%% Coordinates of nodes.
+\coordinate (n12) at (0.000,2.669);
+\coordinate (n4) at (0.844,2.669);
+\coordinate (n4p) at (0.000,2.669);
+\coordinate (n5) at (1.688,4.287);
+\coordinate (n5p) at (0.844,4.287);
+\coordinate (n6) at (2.533,4.900);
+\coordinate (n6p) at (1.688,4.900);
+\coordinate (n7) at (2.533,3.675);
+\coordinate (n7p) at (1.688,3.675);
+\coordinate (n8) at (3.377,4.200);
+\coordinate (n8p) at (2.533,4.200);
+\coordinate (n9) at (3.377,3.150);
+\coordinate (n9p) at (2.533,3.150);
+\coordinate (n10) at (4.221,3.500);
+\coordinate (n10p) at (3.377,3.500);
+\coordinate (n11) at (4.221,2.800);
+\coordinate (n11p) at (3.377,2.800);
+\coordinate (n3) at (1.688,1.050);
+\coordinate (n3p) at (0.844,1.050);
+\coordinate (n13) at (2.533,1.750);
+\coordinate (n13p) at (1.688,1.750);
+\coordinate (n14) at (3.377,2.100);
+\coordinate (n14p) at (2.533,2.100);
+\coordinate (n15) at (3.377,1.400);
+\coordinate (n15p) at (2.533,1.400);
+\coordinate (n0) at (2.533,0.350);
+\coordinate (n0p) at (1.688,0.350);
+\coordinate (n1) at (3.377,0.700);
+\coordinate (n1p) at (2.533,0.700);
+\coordinate (n2) at (3.377,0.000);
+\coordinate (n2p) at (2.533,0.000);
+
+%% horizontal lines
+\draw (n4p) -- (n4);
+\draw (n5p) -- (n5);
+\draw (n6p) -- (n6);
+\draw (n7p) -- (n7);
+\draw (n8p) -- (n8);
+\draw (n9p) -- (n9);
+\draw (n10p) -- (n10);
+\draw (n11p) -- (n11);
+\draw (n3p) -- (n3);
+\draw (n13p) -- (n13);
+\draw (n14p) -- (n14);
+\draw (n15p) -- (n15);
+\draw (n0p) -- (n0);
+\draw (n1p) -- (n1);
+\draw (n2p) -- (n2);
+
+%% vertical lines
+\draw [line cap=rect] (n5p) -- (n3p);
+\draw [line cap=rect] (n6p) -- (n7p);
+\draw [line cap=rect] (n8p) -- (n9p);
+\draw [line cap=rect] (n10p) -- (n11p);
+\draw [line cap=rect] (n13p) -- (n0p);
+\draw [line cap=rect] (n14p) -- (n15p);
+\draw [line cap=rect] (n1p) -- (n2p);
+
+%% leaf labels
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n6) {lebanonensis};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n8) {melanogaster};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n10) {sechellia};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n11) {simulans};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n14) {yakuba};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n15) {erecta};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n1) {hydei};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n2) {virilis};
+
+%% root label
+\node [root,text height=0.271cm,text depth=0.109cm] at (n12) {out};
+
+% internal node labels (doSmartLabels is True)
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n5) {21};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n7) {55};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n9) {48};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n3) {35};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n13) {23};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n0) {43};
+
+\end{tikzpicture}

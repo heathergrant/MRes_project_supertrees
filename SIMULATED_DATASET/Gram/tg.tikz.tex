@@ -1,0 +1,105 @@
+%% This is a tikz file
+
+% This file is set up to use 11pt palatino font.
+\tikzset{node lower left/.style={font=\scriptsize,anchor=north east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+leaf/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.13cm},
+tgr root/.style={font=\scriptsize,fill=White,text height=0.198cm,text depth=0.079cm,inner sep=0.07cm},
+node upper left/.style={font=\scriptsize,anchor=south east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+bracket label/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.2cm},
+tgr leaf/.style={font=\normalsize,anchor=center,text height=0.271cm,text depth=0.109cm,inner sep=0.0cm},
+node upper right/.style={font=\scriptsize,anchor=south west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+node right/.style={font=\scriptsize,anchor=west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+tgr internal/.style={font=\scriptsize,fill=White,text height=0.198cm,text depth=0.079cm,inner sep=0.07cm},
+branch/.style={font=\tiny,text height=0.149cm,text depth=0.059cm,inner sep=0.025cm},
+tgr branch/.style={font=\tiny,text height=0.149cm,text depth=0.059cm,inner sep=0.05cm},
+root/.style={font=\normalsize,anchor=east,text height=0.271cm,text depth=0.109cm},
+node lower right/.style={font=\scriptsize,anchor=north west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm}}
+\begin{tikzpicture}[semithick,inner sep=0.1cm]
+%                                         +---2:MRP
+% +---------------------------------------1:69
+% |                                       +-----3:MajR
+% |
+% |     +----------5:SR2008
+% |     |
+% |-----4:41          +------8:SPA
+% 0     |  +----------7:38
+% |     |  |          +-----9:SPA_supports
+% |     +--6:35
+% |        |                    +--11:QPA
+% |        +--------------------10:54
+% |                             +--12:QPA_supports
+% |
+% +----------------------13:True_tree
+
+% The scale is 1.440506, and the yScale is 0.700000
+
+%% Coordinates of nodes.
+\coordinate (n0) at (0.000,2.275);
+\coordinate (n1) at (3.539,4.550);
+\coordinate (n1p) at (0.000,4.550);
+\coordinate (n2) at (3.612,4.900);
+\coordinate (n2p) at (3.539,4.900);
+\coordinate (n3) at (3.752,4.200);
+\coordinate (n3p) at (3.539,4.200);
+\coordinate (n4) at (0.284,2.625);
+\coordinate (n4p) at (0.000,2.625);
+\coordinate (n5) at (0.991,3.500);
+\coordinate (n5p) at (0.284,3.500);
+\coordinate (n6) at (0.304,1.750);
+\coordinate (n6p) at (0.284,1.750);
+\coordinate (n7) at (1.075,2.450);
+\coordinate (n7p) at (0.304,2.450);
+\coordinate (n8) at (1.365,2.800);
+\coordinate (n8p) at (1.075,2.800);
+\coordinate (n9) at (1.303,2.100);
+\coordinate (n9p) at (1.075,2.100);
+\coordinate (n10) at (1.935,1.050);
+\coordinate (n10p) at (0.304,1.050);
+\coordinate (n11) at (1.976,1.400);
+\coordinate (n11p) at (1.935,1.400);
+\coordinate (n12) at (1.951,0.700);
+\coordinate (n12p) at (1.935,0.700);
+\coordinate (n13) at (1.847,0.000);
+\coordinate (n13p) at (0.000,0.000);
+
+%% horizontal lines
+\draw (n1p) -- (n1);
+\draw (n2p) -- (n2);
+\draw (n3p) -- (n3);
+\draw (n4p) -- (n4);
+\draw (n5p) -- (n5);
+\draw (n6p) -- (n6);
+\draw (n7p) -- (n7);
+\draw (n8p) -- (n8);
+\draw (n9p) -- (n9);
+\draw (n10p) -- (n10);
+\draw (n11p) -- (n11);
+\draw (n12p) -- (n12);
+\draw (n13p) -- (n13);
+
+%% vertical lines
+\draw [line cap=rect] (n1p) -- (n13p);
+\draw [line cap=rect] (n2p) -- (n3p);
+\draw [line cap=rect] (n5p) -- (n6p);
+\draw [line cap=rect] (n7p) -- (n10p);
+\draw [line cap=rect] (n8p) -- (n9p);
+\draw [line cap=rect] (n11p) -- (n12p);
+
+%% leaf labels
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n2) {MRP};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n3) {MajR};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n5) {SR2008};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n8) {SPA};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n9) {SPA\_supports};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n11) {QPA};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n12) {QPA\_supports};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n13) {True\_tree};
+
+% internal node labels (doSmartLabels is True)
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n1) {69};
+\node [node right,text height=0.198cm,text depth=0.079cm] at (n4) {41};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n6) {35};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n7) {38};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n10) {54};
+
+\end{tikzpicture}

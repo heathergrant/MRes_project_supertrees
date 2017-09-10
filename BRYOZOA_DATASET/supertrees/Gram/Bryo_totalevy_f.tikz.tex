@@ -1,0 +1,543 @@
+%% This is a tikz file
+
+% This file is set up to use 11pt palatino font.
+\tikzset{node lower left/.style={font=\scriptsize,anchor=north east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+leaf/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.13cm},
+node upper left/.style={font=\scriptsize,anchor=south east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+bracket label/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.2cm},
+node upper right/.style={font=\scriptsize,anchor=south west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+node right/.style={font=\scriptsize,anchor=west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+branch/.style={font=\tiny,text height=0.149cm,text depth=0.059cm,inner sep=0.025cm},
+root/.style={font=\normalsize,anchor=east,text height=0.271cm,text depth=0.109cm},
+node lower right/.style={font=\scriptsize,anchor=north west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm}}
+\begin{tikzpicture}[semithick,inner sep=0.1cm]
+%    +--2:Lophopus_crystallinus{\textcolor{Maroon}{\ding{110}}}
+% +--1:1.0
+% |  | +--4:Pectinatella_magnifica{\textcolor{Maroon}{\ding{110}}}
+% |  +-3:1.0
+% |    +---5:Fredericella_sultana{\textcolor{Maroon}{\ding{110}}}
+% |
+% |                +--8:Annectocyma_tubulosa{\textcolor{ForestGreen}{\ding{110}}}
+% 0  +-------------7:1.0
+% |  |             | +----10:Idmidronea_atlantica{\textcolor{ForestGreen}{\ding{110}}}
+% |  |             +-9:0.968
+% |  |               +----11:Tubulipora_flabellaris{\textcolor{ForestGreen}{\ding{110}}}
+% |  |
+% |  |          +---14:Paludicella_articulata{\textcolor{MidnightBlue}{\ding{110}}}
+% +--6:1.0   +--13:1.0
+%    |       |  +---15:Pottsiella_erecta{\textcolor{MidnightBlue}{\ding{110}}}
+%    |       |
+%    |       |     +-----------18:Flustrellidra_hispida{\textcolor{MidnightBlue}{\ding{110}}}
+%    |       |  +--17:1.0
+%    +-------12:1.0+----19:Alcyonidioides_mytili{\textcolor{MidnightBlue}{\ding{110}}}
+%            |  |
+%            |  | +------21:Anguinella_palmata{\textcolor{MidnightBlue}{\ding{110}}}
+%            |  | |
+%            +--16:1.0   +-24:Conopeum_reticulum{\textcolor{VioletRed}{\ding{110}}}
+%               | | +----23:1.0
+%               | | |    +-25:Tendra_zostericola{\textcolor{VioletRed}{\ding{110}}}
+%               | | |
+%               | | |       +-29:Leiosalpinx_australis{\textcolor{VioletRed}{\ding{110}}}
+%               | | |    +--28:1.0
+%               +-20:0.561  |  +31:Scruparia_chelata{\textcolor{VioletRed}{\ding{110}}}
+%                 | |    |  +--30:1.0
+%                 | |    |     +32:Scruparia_chelata2{\textcolor{VioletRed}{\ding{110}}}
+%                 | |    |
+%                 | |    |    +-----35:Steginoporella_magnifica{\textcolor{VioletRed}{\ding{110}}}
+%                 | | +--27:1.34:1.0
+%                 | | |  | |  |     +----37:Thalamoporella_sp2{\textcolor{VioletRed}{\ding{110}}}
+%                 +-22:0.57|  +-----36:1.0
+%                   | |  | |        +---38:Thalamoporella_sp1{\textcolor{VioletRed}{\ding{110}}}
+%                   | |  | |
+%                   | |  +-33:1.0  +--41:Aetea_anguina{\textcolor{VioletRed}{\ding{110}}}
+%                   | |    |  +----40:1.0
+%                   | |    |  |    +---42:Aetea_sp
+%                   | |    |  |
+%                   | |    +--39:1.0---45:Electra_pilosa{\textcolor{VioletRed}{\ding{110}}}
+%                   | |       | +--44:1.0
+%                   | |       | |  +---46:Eucratea_loricata{\textcolor{VioletRed}{\ding{110}}}
+%                   | |       +-43:0.513
+%                   | |         |   +---48:Membranipora_membranacea{\textcolor{VioletRed}{\ding{110}}}
+%                   | |         +---47:1.0
+%                   +-26:1.0        +-----49:Biflustra_sp{\textcolor{VioletRed}{\ding{110}}}
+%                     |
+%                     |      +----53:Flustra_foliacea{\textcolor{orange}{\ding{110}}}
+%                     |    +-52:0.637
+%                     |    | |      +--55:Celleporella_hyalina{\textcolor{orange}{\ding{110}}}
+%                     |    | +------54:1.0
+%                     |    |        +--56:Celleporella_hyalina2{\textcolor{orange}{\ding{110}}}
+%                     |  +-51:0.642
+%                     |  | |    +---59:Bugula_neritina{\textcolor{orange}{\ding{110}}}
+%                     |  | | +--58:0.998
+%                     |  | | |  +--60:Chaperiopsis_sp{\textcolor{orange}{\ding{110}}}
+%                     |  | +-57:0.993
+%                     |  |   |  +-62:Crisularia_plumosa{\textcolor{orange}{\ding{110}}}
+%                     |  |   +--61:0.999
+%                     |  |      | +-64:Callopora_lineata{\textcolor{orange}{\ding{110}}}
+%                     +--50:1.0 +-63:0.817
+%                        |        +-65:Scrupocellaria_scruposa{\textcolor{orange}{\ding{110}}}
+%                        |
+%                        | +----67:Cribrilina_mutabilis{\textcolor{orange}{\ding{110}}}
+%                        | |
+%                        | |    +----70:Microporella_ciliata{\textcolor{orange}{\ding{110}}}
+%                        | |  +-69:0.973
+%                        +-66:0.642-71:Escharoides_coccinea{\textcolor{orange}{\ding{110}}}
+%                          |  |
+%                          |  |   +----74:Escharella_immersa{\textcolor{orange}{\ding{110}}}
+%                          |  |   |
+%                          +--68:173:0.705teporella_beaniana{\textcolor{orange}{\ding{110}}}
+%                             | | |
+%                             | | +---76:Chiastosella_sp{\textcolor{orange}{\ding{110}}}
+%                             | |
+%                             | |   +--79:Celleporina_hassallii{\textcolor{orange}{\ding{110}}}
+%                             +-72:0.985
+%                               | +-78:0.712chizoporella_dunkeri{\textcolor{orange}{\ding{110}}}
+%                               | | |
+%                               | | | +---82:Phidoloporidae_sp{\textcolor{orange}{\ding{110}}}
+%                               | | +-81:0.77
+%                               +-77:0.7283:Reteporella_ligulata{\textcolor{orange}{\ding{110}}}
+%                                 |
+%                                 | +--85:Schizomavella_linearis{\textcolor{orange}{\ding{110}}}
+%                                 | |
+%                                 +-84:0.969:Watersipora_subtorquata{\textcolor{orange}{\ding{110}}}
+%                                   | |
+%                                   +-86:0.953Umbonula_littoralis{\textcolor{orange}{\ding{110}}}
+%                                     +-88:1.0
+%                                       | +--91:Cryptosula_pallasiana{\textcolor{orange}{\ding{110}}}
+%                                       +-90:1.0
+%                                         +--92:Pentapora_foliacea{\textcolor{orange}{\ding{110}}}
+
+% The scale is 9.752467, and the yScale is 0.700000
+
+%% Coordinates of nodes.
+\coordinate (n0) at (0.000,30.435);
+\coordinate (n1) at (1.889,32.375);
+\coordinate (n1p) at (0.000,32.375);
+\coordinate (n2) at (3.302,32.900);
+\coordinate (n2p) at (1.889,32.900);
+\coordinate (n3) at (2.284,31.850);
+\coordinate (n3p) at (1.889,31.850);
+\coordinate (n4) at (3.183,32.200);
+\coordinate (n4p) at (2.284,32.200);
+\coordinate (n5) at (3.885,31.500);
+\coordinate (n5p) at (2.284,31.500);
+\coordinate (n6) at (1.889,28.496);
+\coordinate (n6p) at (0.000,28.496);
+\coordinate (n7) at (14.755,30.275);
+\coordinate (n7p) at (1.889,30.275);
+\coordinate (n8) at (17.185,30.800);
+\coordinate (n8p) at (14.755,30.800);
+\coordinate (n9) at (15.372,29.750);
+\coordinate (n9p) at (14.755,29.750);
+\coordinate (n10) at (19.133,30.100);
+\coordinate (n10p) at (15.372,30.100);
+\coordinate (n11) at (18.868,29.400);
+\coordinate (n11p) at (15.372,29.400);
+\coordinate (n12) at (8.936,26.717);
+\coordinate (n12p) at (1.889,26.717);
+\coordinate (n13) at (9.912,28.350);
+\coordinate (n13p) at (8.936,28.350);
+\coordinate (n14) at (12.322,28.700);
+\coordinate (n14p) at (9.912,28.700);
+\coordinate (n15) at (12.659,28.000);
+\coordinate (n15p) at (9.912,28.000);
+\coordinate (n16) at (9.587,25.084);
+\coordinate (n16p) at (8.936,25.084);
+\coordinate (n17) at (11.333,26.950);
+\coordinate (n17p) at (9.587,26.950);
+\coordinate (n18) at (22.512,27.300);
+\coordinate (n18p) at (11.333,27.300);
+\coordinate (n19) at (15.544,26.600);
+\coordinate (n19p) at (11.333,26.600);
+\coordinate (n20) at (9.847,23.217);
+\coordinate (n20p) at (9.587,23.217);
+\coordinate (n21) at (16.282,25.900);
+\coordinate (n21p) at (9.847,25.900);
+\coordinate (n22) at (10.878,20.534);
+\coordinate (n22p) at (9.847,20.534);
+\coordinate (n23) at (13.835,24.850);
+\coordinate (n23p) at (10.878,24.850);
+\coordinate (n24) at (14.728,25.200);
+\coordinate (n24p) at (13.835,25.200);
+\coordinate (n25) at (14.808,24.500);
+\coordinate (n25p) at (13.835,24.500);
+\coordinate (n26) at (11.340,16.218);
+\coordinate (n26p) at (10.878,16.218);
+\coordinate (n27) at (11.975,21.481);
+\coordinate (n27p) at (11.340,21.481);
+\coordinate (n28) at (13.466,23.275);
+\coordinate (n28p) at (11.975,23.275);
+\coordinate (n29) at (14.493,23.800);
+\coordinate (n29p) at (13.466,23.800);
+\coordinate (n30) at (14.609,22.750);
+\coordinate (n30p) at (13.466,22.750);
+\coordinate (n31) at (14.614,23.100);
+\coordinate (n31p) at (14.609,23.100);
+\coordinate (n32) at (14.628,22.400);
+\coordinate (n32p) at (14.609,22.400);
+\coordinate (n33) at (12.752,19.688);
+\coordinate (n33p) at (11.975,19.688);
+\coordinate (n34) at (14.432,21.175);
+\coordinate (n34p) at (12.752,21.175);
+\coordinate (n35) at (18.843,21.700);
+\coordinate (n35p) at (14.432,21.700);
+\coordinate (n36) at (18.432,20.650);
+\coordinate (n36p) at (14.432,20.650);
+\coordinate (n37) at (21.842,21.000);
+\coordinate (n37p) at (18.432,21.000);
+\coordinate (n38) at (20.765,20.300);
+\coordinate (n38p) at (18.432,20.300);
+\coordinate (n39) at (13.906,18.200);
+\coordinate (n39p) at (12.752,18.200);
+\coordinate (n40) at (17.548,19.250);
+\coordinate (n40p) at (13.906,19.250);
+\coordinate (n41) at (19.421,19.600);
+\coordinate (n41p) at (17.548,19.600);
+\coordinate (n42) at (19.944,18.900);
+\coordinate (n42p) at (17.548,18.900);
+\coordinate (n43) at (14.384,17.150);
+\coordinate (n43p) at (13.906,17.150);
+\coordinate (n44) at (15.538,17.850);
+\coordinate (n44p) at (14.384,17.850);
+\coordinate (n45) at (18.756,18.200);
+\coordinate (n45p) at (15.538,18.200);
+\coordinate (n46) at (18.726,17.500);
+\coordinate (n46p) at (15.538,17.500);
+\coordinate (n47) at (16.883,16.450);
+\coordinate (n47p) at (14.384,16.450);
+\coordinate (n48) at (19.112,16.800);
+\coordinate (n48p) at (16.883,16.800);
+\coordinate (n49) at (21.521,16.100);
+\coordinate (n49p) at (16.883,16.100);
+\coordinate (n50) at (12.277,10.955);
+\coordinate (n50p) at (11.340,10.955);
+\coordinate (n51) at (12.594,13.519);
+\coordinate (n51p) at (12.277,13.519);
+\coordinate (n52) at (13.068,14.875);
+\coordinate (n52p) at (12.594,14.875);
+\coordinate (n53) at (16.771,15.400);
+\coordinate (n53p) at (13.068,15.400);
+\coordinate (n54) at (19.220,14.350);
+\coordinate (n54p) at (13.068,14.350);
+\coordinate (n55) at (20.553,14.700);
+\coordinate (n55p) at (19.220,14.700);
+\coordinate (n56) at (20.601,14.000);
+\coordinate (n56p) at (19.220,14.000);
+\coordinate (n57) at (12.985,12.162);
+\coordinate (n57p) at (12.594,12.162);
+\coordinate (n58) at (13.704,12.950);
+\coordinate (n58p) at (12.985,12.950);
+\coordinate (n59) at (17.235,13.300);
+\coordinate (n59p) at (13.704,13.300);
+\coordinate (n60) at (16.072,12.600);
+\coordinate (n60p) at (13.704,12.600);
+\coordinate (n61) at (13.877,11.375);
+\coordinate (n61p) at (12.985,11.375);
+\coordinate (n62) at (14.799,11.900);
+\coordinate (n62p) at (13.877,11.900);
+\coordinate (n63) at (14.181,10.850);
+\coordinate (n63p) at (13.877,10.850);
+\coordinate (n64) at (15.210,11.200);
+\coordinate (n64p) at (14.181,11.200);
+\coordinate (n65) at (15.389,10.500);
+\coordinate (n65p) at (14.181,10.500);
+\coordinate (n66) at (12.566,8.392);
+\coordinate (n66p) at (12.277,8.392);
+\coordinate (n67) at (15.992,9.800);
+\coordinate (n67p) at (12.566,9.800);
+\coordinate (n68) at (13.535,6.984);
+\coordinate (n68p) at (12.566,6.984);
+\coordinate (n69) at (13.933,8.750);
+\coordinate (n69p) at (13.535,8.750);
+\coordinate (n70) at (18.115,9.100);
+\coordinate (n70p) at (13.933,9.100);
+\coordinate (n71) at (16.477,8.400);
+\coordinate (n71p) at (13.933,8.400);
+\coordinate (n72) at (13.873,5.217);
+\coordinate (n72p) at (13.535,5.217);
+\coordinate (n73) at (14.336,7.000);
+\coordinate (n73p) at (13.873,7.000);
+\coordinate (n74) at (18.006,7.700);
+\coordinate (n74p) at (14.336,7.700);
+\coordinate (n75) at (15.444,7.000);
+\coordinate (n75p) at (14.336,7.000);
+\coordinate (n76) at (17.481,6.300);
+\coordinate (n76p) at (14.336,6.300);
+\coordinate (n77) at (14.295,3.434);
+\coordinate (n77p) at (13.873,3.434);
+\coordinate (n78) at (14.529,4.725);
+\coordinate (n78p) at (14.295,4.725);
+\coordinate (n79) at (16.605,5.600);
+\coordinate (n79p) at (14.529,5.600);
+\coordinate (n80) at (17.913,4.900);
+\coordinate (n80p) at (14.529,4.900);
+\coordinate (n81) at (15.112,3.850);
+\coordinate (n81p) at (14.529,3.850);
+\coordinate (n82) at (17.948,4.200);
+\coordinate (n82p) at (15.112,4.200);
+\coordinate (n83) at (16.722,3.500);
+\coordinate (n83p) at (15.112,3.500);
+\coordinate (n84) at (14.595,2.144);
+\coordinate (n84p) at (14.295,2.144);
+\coordinate (n85) at (16.244,2.800);
+\coordinate (n85p) at (14.595,2.800);
+\coordinate (n86) at (14.780,1.487);
+\coordinate (n86p) at (14.595,1.487);
+\coordinate (n87) at (17.921,2.100);
+\coordinate (n87p) at (14.780,2.100);
+\coordinate (n88) at (15.229,0.875);
+\coordinate (n88p) at (14.780,0.875);
+\coordinate (n89) at (17.042,1.400);
+\coordinate (n89p) at (15.229,1.400);
+\coordinate (n90) at (15.787,0.350);
+\coordinate (n90p) at (15.229,0.350);
+\coordinate (n91) at (17.526,0.700);
+\coordinate (n91p) at (15.787,0.700);
+\coordinate (n92) at (17.624,0.000);
+\coordinate (n92p) at (15.787,0.000);
+
+%% horizontal lines
+\draw (n1p) -- (n1);
+\draw (n2p) -- (n2);
+\draw (n3p) -- (n3);
+\draw (n4p) -- (n4);
+\draw (n5p) -- (n5);
+\draw (n6p) -- (n6);
+\draw (n7p) -- (n7);
+\draw (n8p) -- (n8);
+\draw (n9p) -- (n9);
+\draw (n10p) -- (n10);
+\draw (n11p) -- (n11);
+\draw (n12p) -- (n12);
+\draw (n13p) -- (n13);
+\draw (n14p) -- (n14);
+\draw (n15p) -- (n15);
+\draw (n16p) -- (n16);
+\draw (n17p) -- (n17);
+\draw (n18p) -- (n18);
+\draw (n19p) -- (n19);
+\draw (n20p) -- (n20);
+\draw (n21p) -- (n21);
+\draw (n22p) -- (n22);
+\draw (n23p) -- (n23);
+\draw (n24p) -- (n24);
+\draw (n25p) -- (n25);
+\draw (n26p) -- (n26);
+\draw (n27p) -- (n27);
+\draw (n28p) -- (n28);
+\draw (n29p) -- (n29);
+\draw (n30p) -- (n30);
+\draw (n31p) -- (n31);
+\draw (n32p) -- (n32);
+\draw (n33p) -- (n33);
+\draw (n34p) -- (n34);
+\draw (n35p) -- (n35);
+\draw (n36p) -- (n36);
+\draw (n37p) -- (n37);
+\draw (n38p) -- (n38);
+\draw (n39p) -- (n39);
+\draw (n40p) -- (n40);
+\draw (n41p) -- (n41);
+\draw (n42p) -- (n42);
+\draw (n43p) -- (n43);
+\draw (n44p) -- (n44);
+\draw (n45p) -- (n45);
+\draw (n46p) -- (n46);
+\draw (n47p) -- (n47);
+\draw (n48p) -- (n48);
+\draw (n49p) -- (n49);
+\draw (n50p) -- (n50);
+\draw (n51p) -- (n51);
+\draw (n52p) -- (n52);
+\draw (n53p) -- (n53);
+\draw (n54p) -- (n54);
+\draw (n55p) -- (n55);
+\draw (n56p) -- (n56);
+\draw (n57p) -- (n57);
+\draw (n58p) -- (n58);
+\draw (n59p) -- (n59);
+\draw (n60p) -- (n60);
+\draw (n61p) -- (n61);
+\draw (n62p) -- (n62);
+\draw (n63p) -- (n63);
+\draw (n64p) -- (n64);
+\draw (n65p) -- (n65);
+\draw (n66p) -- (n66);
+\draw (n67p) -- (n67);
+\draw (n68p) -- (n68);
+\draw (n69p) -- (n69);
+\draw (n70p) -- (n70);
+\draw (n71p) -- (n71);
+\draw (n72p) -- (n72);
+\draw (n73p) -- (n73);
+\draw (n74p) -- (n74);
+\draw (n75p) -- (n75);
+\draw (n76p) -- (n76);
+\draw (n77p) -- (n77);
+\draw (n78p) -- (n78);
+\draw (n79p) -- (n79);
+\draw (n80p) -- (n80);
+\draw (n81p) -- (n81);
+\draw (n82p) -- (n82);
+\draw (n83p) -- (n83);
+\draw (n84p) -- (n84);
+\draw (n85p) -- (n85);
+\draw (n86p) -- (n86);
+\draw (n87p) -- (n87);
+\draw (n88p) -- (n88);
+\draw (n89p) -- (n89);
+\draw (n90p) -- (n90);
+\draw (n91p) -- (n91);
+\draw (n92p) -- (n92);
+
+%% vertical lines
+\draw [line cap=rect] (n1p) -- (n6p);
+\draw [line cap=rect] (n2p) -- (n3p);
+\draw [line cap=rect] (n4p) -- (n5p);
+\draw [line cap=rect] (n7p) -- (n12p);
+\draw [line cap=rect] (n8p) -- (n9p);
+\draw [line cap=rect] (n10p) -- (n11p);
+\draw [line cap=rect] (n13p) -- (n16p);
+\draw [line cap=rect] (n14p) -- (n15p);
+\draw [line cap=rect] (n17p) -- (n20p);
+\draw [line cap=rect] (n18p) -- (n19p);
+\draw [line cap=rect] (n21p) -- (n22p);
+\draw [line cap=rect] (n23p) -- (n26p);
+\draw [line cap=rect] (n24p) -- (n25p);
+\draw [line cap=rect] (n27p) -- (n50p);
+\draw [line cap=rect] (n28p) -- (n33p);
+\draw [line cap=rect] (n29p) -- (n30p);
+\draw [line cap=rect] (n31p) -- (n32p);
+\draw [line cap=rect] (n34p) -- (n39p);
+\draw [line cap=rect] (n35p) -- (n36p);
+\draw [line cap=rect] (n37p) -- (n38p);
+\draw [line cap=rect] (n40p) -- (n43p);
+\draw [line cap=rect] (n41p) -- (n42p);
+\draw [line cap=rect] (n44p) -- (n47p);
+\draw [line cap=rect] (n45p) -- (n46p);
+\draw [line cap=rect] (n48p) -- (n49p);
+\draw [line cap=rect] (n51p) -- (n66p);
+\draw [line cap=rect] (n52p) -- (n57p);
+\draw [line cap=rect] (n53p) -- (n54p);
+\draw [line cap=rect] (n55p) -- (n56p);
+\draw [line cap=rect] (n58p) -- (n61p);
+\draw [line cap=rect] (n59p) -- (n60p);
+\draw [line cap=rect] (n62p) -- (n63p);
+\draw [line cap=rect] (n64p) -- (n65p);
+\draw [line cap=rect] (n67p) -- (n68p);
+\draw [line cap=rect] (n69p) -- (n72p);
+\draw [line cap=rect] (n70p) -- (n71p);
+\draw [line cap=rect] (n73p) -- (n77p);
+\draw [line cap=rect] (n74p) -- (n76p);
+\draw [line cap=rect] (n78p) -- (n84p);
+\draw [line cap=rect] (n79p) -- (n81p);
+\draw [line cap=rect] (n82p) -- (n83p);
+\draw [line cap=rect] (n85p) -- (n86p);
+\draw [line cap=rect] (n87p) -- (n88p);
+\draw [line cap=rect] (n89p) -- (n90p);
+\draw [line cap=rect] (n91p) -- (n92p);
+
+%% leaf labels
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n2) {Lophopus\_crystallinus{\textcolor{Maroon}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n4) {Pectinatella\_magnifica{\textcolor{Maroon}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n5) {Fredericella\_sultana{\textcolor{Maroon}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n8) {Annectocyma\_tubulosa{\textcolor{ForestGreen}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n10) {Idmidronea\_atlantica{\textcolor{ForestGreen}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n11) {Tubulipora\_flabellaris{\textcolor{ForestGreen}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n14) {Paludicella\_articulata{\textcolor{MidnightBlue}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n15) {Pottsiella\_erecta{\textcolor{MidnightBlue}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n18) {Flustrellidra\_hispida{\textcolor{MidnightBlue}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n19) {Alcyonidioides\_mytili{\textcolor{MidnightBlue}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n21) {Anguinella\_palmata{\textcolor{MidnightBlue}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n24) {Conopeum\_reticulum{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n25) {Tendra\_zostericola{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n29) {Leiosalpinx\_australis{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n31) {Scruparia\_chelata{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n32) {Scruparia\_chelata2{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n35) {Steginoporella\_magnifica{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n37) {Thalamoporella\_sp2{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n38) {Thalamoporella\_sp1{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n41) {Aetea\_anguina{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n42) {Aetea\_sp};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n45) {Electra\_pilosa{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n46) {Eucratea\_loricata{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n48) {Membranipora\_membranacea{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n49) {Biflustra\_sp{\textcolor{VioletRed}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n53) {Flustra\_foliacea{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n55) {Celleporella\_hyalina{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n56) {Celleporella\_hyalina2{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n59) {Bugula\_neritina{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n60) {Chaperiopsis\_sp{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n62) {Crisularia\_plumosa{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n64) {Callopora\_lineata{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n65) {Scrupocellaria\_scruposa{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n67) {Cribrilina\_mutabilis{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n70) {Microporella\_ciliata{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n71) {Escharoides\_coccinea{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n74) {Escharella\_immersa{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n75) {Reteporella\_beaniana{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n76) {Chiastosella\_sp{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n79) {Celleporina\_hassallii{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n80) {Schizoporella\_dunkeri{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n82) {Phidoloporidae\_sp{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n83) {Reteporella\_ligulata{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n85) {Schizomavella\_linearis{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n87) {Watersipora\_subtorquata{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n89) {Umbonula\_littoralis{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n91) {Cryptosula\_pallasiana{\textcolor{orange}{\ding{110}}}};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n92) {Pentapora\_foliacea{\textcolor{orange}{\ding{110}}}};
+
+% internal node labels (doSmartLabels is True)
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n1) {1.0};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n3) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n6) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n7) {1.0};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n9) {0.968};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n12) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n13) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n16) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n17) {1.0};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n20) {0.561};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n22) {0.57};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n23) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n26) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n27) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n28) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n30) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n33) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n34) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n36) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n39) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n40) {1.0};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n43) {0.513};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n44) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n47) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n50) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n51) {0.642};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n52) {0.637};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n54) {1.0};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n57) {0.993};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n58) {0.998};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n61) {0.999};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n63) {0.817};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n66) {0.642};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n68) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n69) {0.973};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n72) {0.985};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n73) {0.705};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n77) {0.728};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n78) {0.712};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n81) {0.77};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n84) {0.969};
+\node [node lower left,text height=0.198cm,text depth=0.079cm] at (n86) {0.953};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n88) {1.0};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n90) {1.0};
+
+%% scale bar
+\coordinate (sb_A) at (5.438,0.000);
+\coordinate (sb_B) at (3.000,0.000);
+\coordinate (sb_C) at (7.876,0.000);
+\draw (sb_B) -- (sb_C);
+\node [font=\small,anchor=south,text height=0.248cm,text depth=0.099cm] at (sb_A) {0.5};
+
+\end{tikzpicture}

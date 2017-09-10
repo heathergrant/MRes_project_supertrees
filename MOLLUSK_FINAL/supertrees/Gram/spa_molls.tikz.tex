@@ -1,0 +1,112 @@
+%% This is a tikz file
+
+% This file is set up to use 11pt palatino font.
+\tikzset{node lower left/.style={font=\scriptsize,anchor=north east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+leaf/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.13cm},
+node upper left/.style={font=\scriptsize,anchor=south east,yshift=-0.032cm,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+bracket label/.style={font=\normalsize,anchor=west,text height=0.271cm,text depth=0.109cm,inner sep=0.2cm},
+node upper right/.style={font=\scriptsize,anchor=south west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+node right/.style={font=\scriptsize,anchor=west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm},
+branch/.style={font=\tiny,text height=0.149cm,text depth=0.059cm,inner sep=0.025cm},
+root/.style={font=\normalsize,anchor=east,text height=0.271cm,text depth=0.109cm},
+node lower right/.style={font=\scriptsize,anchor=north west,text height=0.198cm,text depth=0.079cm,inner sep=0.03cm}}
+\begin{tikzpicture}[semithick,inner sep=0.1cm]
+%              +---------5:Cephalopoda
+%              |
+%              |                            +--------9:Gastropoda
+%              |                  +---------8:100
+% out:6--------4                  |         +--------10:Solenogastres
+%              |         +--------7:100
+%              |         |        |         +--------12:Polyplacophora
+%              |         |        +---------11:100
+%              +---------3:100              +--------13:Scaphopoda
+%                        |
+%                        |        +---------14:Monoplacophora
+%                        +--------2:100
+%                                 |         +--------1:Caudofoveata
+%                                 +---------0:100
+%                                           +--------15:Bivalvia
+
+% The scale is 8.442000, and the yScale is 0.700000
+
+%% Coordinates of nodes.
+\coordinate (n6) at (0.000,3.456);
+\coordinate (n4) at (0.844,3.456);
+\coordinate (n4p) at (0.000,3.456);
+\coordinate (n5) at (1.688,4.900);
+\coordinate (n5p) at (0.844,4.900);
+\coordinate (n3) at (1.688,2.012);
+\coordinate (n3p) at (0.844,2.012);
+\coordinate (n7) at (2.533,3.150);
+\coordinate (n7p) at (1.688,3.150);
+\coordinate (n8) at (3.377,3.850);
+\coordinate (n8p) at (2.533,3.850);
+\coordinate (n9) at (4.221,4.200);
+\coordinate (n9p) at (3.377,4.200);
+\coordinate (n10) at (4.221,3.500);
+\coordinate (n10p) at (3.377,3.500);
+\coordinate (n11) at (3.377,2.450);
+\coordinate (n11p) at (2.533,2.450);
+\coordinate (n12) at (4.221,2.800);
+\coordinate (n12p) at (3.377,2.800);
+\coordinate (n13) at (4.221,2.100);
+\coordinate (n13p) at (3.377,2.100);
+\coordinate (n2) at (2.533,0.875);
+\coordinate (n2p) at (1.688,0.875);
+\coordinate (n14) at (3.377,1.400);
+\coordinate (n14p) at (2.533,1.400);
+\coordinate (n0) at (3.377,0.350);
+\coordinate (n0p) at (2.533,0.350);
+\coordinate (n1) at (4.221,0.700);
+\coordinate (n1p) at (3.377,0.700);
+\coordinate (n15) at (4.221,0.000);
+\coordinate (n15p) at (3.377,0.000);
+
+%% horizontal lines
+\draw (n4p) -- (n4);
+\draw (n5p) -- (n5);
+\draw (n3p) -- (n3);
+\draw (n7p) -- (n7);
+\draw (n8p) -- (n8);
+\draw (n9p) -- (n9);
+\draw (n10p) -- (n10);
+\draw (n11p) -- (n11);
+\draw (n12p) -- (n12);
+\draw (n13p) -- (n13);
+\draw (n2p) -- (n2);
+\draw (n14p) -- (n14);
+\draw (n0p) -- (n0);
+\draw (n1p) -- (n1);
+\draw (n15p) -- (n15);
+
+%% vertical lines
+\draw [line cap=rect] (n5p) -- (n3p);
+\draw [line cap=rect] (n7p) -- (n2p);
+\draw [line cap=rect] (n8p) -- (n11p);
+\draw [line cap=rect] (n9p) -- (n10p);
+\draw [line cap=rect] (n12p) -- (n13p);
+\draw [line cap=rect] (n14p) -- (n0p);
+\draw [line cap=rect] (n1p) -- (n15p);
+
+%% leaf labels
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n5) {Cephalopoda};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n9) {Gastropoda};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n10) {Solenogastres};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n12) {Polyplacophora};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n13) {Scaphopoda};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n14) {Monoplacophora};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n1) {Caudofoveata};
+\node [leaf,text height=0.271cm,text depth=0.109cm] at (n15) {Bivalvia};
+
+%% root label
+\node [root,text height=0.271cm,text depth=0.109cm] at (n6) {out};
+
+% internal node labels (doSmartLabels is True)
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n3) {100};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n7) {100};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n8) {100};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n11) {100};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n2) {100};
+\node [node upper left,text height=0.198cm,text depth=0.079cm] at (n0) {100};
+
+\end{tikzpicture}
